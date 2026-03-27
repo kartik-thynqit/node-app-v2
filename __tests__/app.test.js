@@ -21,7 +21,7 @@ jest.mock("mysql2", () => {
 test("GET / should return API message", async () => {
   const res = await request(app).get("/");
   expect(res.statusCode).toBe(200);
-  expect(res.text).toBe("API is working v5");
+  expect(res.text).toBe("API is working v6");
 });
 
 
