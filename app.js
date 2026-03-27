@@ -5,6 +5,7 @@ require('dotenv').config();
 
 const app = express();
 app.use(express.json());
+
 const db = mysql.createPool({
   host: process.env.DB_HOST,
   user: process.env.DB_USER,
@@ -57,7 +58,7 @@ app.delete('/users/:id', (req, res) => {
 });
 
 app.get('/', (req, res) => {
-  res.send('API is working v6');
+  res.send('API is working v5');
 });
 
 const PORT = process.env.PORT || 3000;
