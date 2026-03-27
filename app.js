@@ -5,12 +5,12 @@ require('dotenv').config();
 
 const app = express();
 app.use(express.json());
-
+const DB_PASSWORD="root4321";
 const db = mysql.createPool({
   host: process.env.DB_HOST,
   user: process.env.DB_USER,
   // password: process.env.DB_PASSWORD,
-  password: "root4321",
+  password: DB_PASSWORD,
   database: process.env.DB_NAME,
   port: process.env.DB_PORT
 });
@@ -43,7 +43,7 @@ app.get('/users', (req, res) => {
 app.delete('/users/:id', (req, res) => {
   const { id } = req.params;
 
-  const query = 'DELETE FROM users WHERE id = ?';
+  const query = `DELETE FROM users WHERE id = '${id}'`;
 
   db.query(query, [id], (err, result) => {
     if (err) {
@@ -59,7 +59,7 @@ app.delete('/users/:id', (req, res) => {
 });
 
 app.get('/', (req, res) => {
-  res.send('API is working v5');
+  res.send('API is working v6');
 });
 
 const PORT = process.env.PORT || 3000;
