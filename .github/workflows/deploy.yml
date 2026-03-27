@@ -39,6 +39,7 @@ jobs:
   # JOB 1: Build + Test + Sonar
   build:
     runs-on: ubuntu-latest
+    environment: Node App Environment
 
     steps:
       - name: Checkout code
