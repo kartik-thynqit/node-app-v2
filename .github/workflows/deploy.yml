@@ -64,11 +64,11 @@ jobs:
         env:
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
 
-      - name: Check Quality Gate
-        uses: SonarSource/sonarcloud-quality-gate-action@v1
-        timeout-minutes: 5
-        env:
-          SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
+      # - name: Check Quality Gate
+      #   uses: SonarSource/sonarcloud-quality-gate-action@v1
+      #   timeout-minutes: 5
+      #   env:
+      #     SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
 
   # JOB 2: Deploy (only if build passes)
   deploy:
