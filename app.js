@@ -58,7 +58,7 @@ app.delete('/users/:id', (req, res) => {
 });
 
 app.get('/', (req, res) => {
-  res.send('API is working v5');
+  res.send('API is working v6');
 });
 
 const PORT = process.env.PORT || 3000;
